@@ -3,11 +3,8 @@ package Tests;
 import BaseTest.BaseTest;
 import Screens.*;
 import io.qameta.allure.Allure;
-import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebElement;
 import org.testng.annotations.Test;
-import org.testng.asserts.SoftAssert;
+
 
 public class BuyCheapPC extends BaseTest {
 
@@ -17,9 +14,6 @@ public class BuyCheapPC extends BaseTest {
 
         LandingScreen landingScreen = new LandingScreen(driver);
         LoginScreen loginScreen = new LoginScreen(driver);
-
-
-        Allure.step("Login button displayed");
 
         landingScreen.LoginBtn.click();
         Allure.step("Login button clicked");
@@ -88,16 +82,27 @@ public class BuyCheapPC extends BaseTest {
         CheckoutScreen checkoutScreen = new CheckoutScreen(driver);
 
         checkoutScreen.ContinueBtn1.click();
+        Allure.step("Click Continue");
+
         checkoutScreen.waitForVisibility(checkoutScreen.ContinueBtn2);
         checkoutScreen.ContinueBtn2.click();
+        Allure.step("Click Continue");
+
         checkoutScreen.waitForVisibility(checkoutScreen.ContinueBtn3);
         checkoutScreen.ContinueBtn3.click();
+        Allure.step("Click Continue");
+
         checkoutScreen.waitForVisibility(checkoutScreen.ContinueBtn4);
         checkoutScreen.ContinueBtn4.click();
+        Allure.step("Click Continue");
+
         checkoutScreen.waitForVisibility(checkoutScreen.ContinueBtn5);
         checkoutScreen.ContinueBtn5.click();
+        Allure.step("Click Continue");
+
         checkoutScreen.waitForVisibility(checkoutScreen.ConfirmBtn);
         checkoutScreen.ConfirmBtn.click();
+        Allure.step("Click Confirm");
 
 
     }
@@ -112,6 +117,8 @@ public class BuyCheapPC extends BaseTest {
         String getOrderNumber = checkoutScreen.OrderNumber.getText();
 
         System.out.println(getOrderNumber);
+
+        Allure.step("Get order number");
     }
 
     @Test(priority = 7)
@@ -120,6 +127,7 @@ public class BuyCheapPC extends BaseTest {
         LandingScreen landingScreen = new LandingScreen(driver);
 
         landingScreen.LogOutBtn.click();
+        Allure.step("Logout");
     }
 
 }
