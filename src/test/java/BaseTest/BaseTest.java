@@ -20,7 +20,7 @@ public class BaseTest {
         driver.get("https://demowebshop.tricentis.com/");
         driver.manage().window().maximize();
 }
-
+//
     @AfterClass
     public static void tearDown(){
 
