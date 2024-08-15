@@ -2,12 +2,13 @@ package Tests;
 
 import BaseTest.BaseTest;
 import Screens.*;
+import Utils.TestListener;
 import io.qameta.allure.Allure;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
-
+@Listeners(TestListener.class)
 public class BuyCheapPC extends BaseTest {
-
 
     @Test(priority = 1)
     public static void Login() {
